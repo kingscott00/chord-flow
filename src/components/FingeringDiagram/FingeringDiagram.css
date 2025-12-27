@@ -1,0 +1,69 @@
+.fingering-diagram {
+  display: block;
+}
+
+.fingering-diagram .string {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+}
+
+.fingering-diagram .fret {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+}
+
+.fingering-diagram .nut {
+  stroke: var(--text-primary);
+  stroke-width: 3;
+}
+
+.fingering-diagram .finger-dot {
+  fill: var(--accent-primary);
+}
+
+.fingering-diagram .finger-number {
+  fill: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.fingering-diagram .string-indicator {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.fingering-diagram .string-indicator.muted {
+  fill: var(--text-muted);
+}
+
+.fingering-diagram .string-indicator.open {
+  fill: none;
+  stroke: var(--text-secondary);
+  stroke-width: 1.5;
+}
+
+.fingering-diagram .barre-rect {
+  fill: var(--accent-primary);
+}
+
+.fingering-diagram .barre-number {
+  fill: var(--text-primary);
+}
+
+.fingering-diagram .position-marker {
+  fill: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Size variations */
+.fingering-diagram.size-small {
+  opacity: 0.9;
+}
+
+.fingering-diagram.size-large .finger-dot {
+  filter: drop-shadow(0 0 3px rgba(99, 102, 241, 0.5));
+}

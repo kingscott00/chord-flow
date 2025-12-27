@@ -1,0 +1,201 @@
+.progression-display {
+  width: 100%;
+  padding: 40px 24px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progression-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Chord Card */
+.chord-card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.chord-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-primary);
+}
+
+.chord-card.active {
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow-primary);
+  background: var(--bg-elevated);
+}
+
+.chord-card.compact {
+  min-width: 80px;
+  padding: 12px;
+  gap: 8px;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chord-symbol {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.compact .chord-symbol {
+  font-size: 20px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chord-card:hover .card-actions {
+  opacity: 1;
+}
+
+.card-action-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.15s ease;
+  background: var(--bg-elevated);
+}
+
+.card-action-btn:hover {
+  background: var(--bg-secondary);
+}
+
+.play-btn:hover {
+  color: var(--accent-success);
+}
+
+.delete-btn {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.delete-btn:hover {
+  color: var(--accent-danger);
+}
+
+/* Card Diagram */
+.card-diagram {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Intervals */
+.card-intervals {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.interval-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: var(--bg-elevated);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+/* Card Footer */
+.card-footer {
+  text-align: center;
+}
+
+.chord-name {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Arrow between chords */
+.chord-arrow {
+  color: var(--text-muted);
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+/* Add Chord Button */
+.add-chord-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 80px;
+  height: 120px;
+  background: var(--bg-card);
+  border: 2px dashed var(--text-muted);
+  border-radius: 12px;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.add-chord-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.add-icon {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.add-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progression-display {
+    padding: 24px 16px;
+  }
+
+  .chord-card {
+    min-width: 100px;
+    padding: 12px;
+  }
+
+  .chord-symbol {
+    font-size: 20px;
+  }
+
+  .add-chord-btn {
+    min-width: 60px;
+    height: 100px;
+  }
+}

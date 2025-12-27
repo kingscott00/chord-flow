@@ -1,0 +1,240 @@
+.chord-network-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+}
+
+.chord-network {
+  position: fixed;
+  z-index: 501;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.network-svg {
+  display: block;
+}
+
+.center-chord {
+  cursor: default;
+}
+
+/* Tooltip */
+.network-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 80px);
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tooltip-header {
+  margin-bottom: 12px;
+}
+
+.tooltip-symbol {
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.tooltip-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.tooltip-diagram {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.tooltip-reason {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Controls */
+.network-controls {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.filter-btn.active {
+  background: rgba(var(--filter-color), 0.15);
+}
+
+/* Network Actions */
+.network-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ending-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.ending-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+.ending-btn.active {
+  background: var(--bg-elevated);
+  border-color: var(--accent-success);
+  color: var(--accent-success);
+}
+
+.network-search {
+  flex: 1;
+  min-width: 180px;
+}
+
+.network-search-input {
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 13px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+}
+
+.network-search-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.network-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Ending Suggestions */
+.ending-suggestions {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.ending-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.ending-chord-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.ending-chord-btn:hover {
+  border-color: var(--accent-success);
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.ending-chord-btn .chord-symbol {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ending-chord-btn .chord-reason {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chord-network {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.75);
+  }
+
+  .network-controls {
+    bottom: -60px;
+  }
+
+  .filter-bar {
+    padding: 6px 8px;
+  }
+
+  .filter-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
