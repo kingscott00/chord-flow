@@ -18,7 +18,9 @@ function Fretboard({
   onRemove,
   onPlayScale,
   chords,
-  detectedKey
+  detectedKey,
+  perChordMode = false,
+  assignedChord = null
 }) {
   const { state } = useApp();
   const { settings } = state;
@@ -52,6 +54,9 @@ function Fretboard({
           <h3 className="scale-name">
             {root} {scale.name}
             {isRecommended && <span className="recommended-badge">Recommended</span>}
+            {perChordMode && assignedChord && (
+              <span className="assigned-chord-badge">for {assignedChord.symbol}</span>
+            )}
           </h3>
           <span className="scale-notes">
             Notes: {scaleNotes.join(' - ')}

@@ -20,7 +20,6 @@ function ChordNetwork({ isOpen, sourceChord, position, onSelectChord, onClose, o
   const { organizedSuggestions, endingSuggestions } = useChordSuggestions(sourceChord);
 
   const [hoveredSuggestion, setHoveredSuggestion] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
   const [showEnding, setShowEnding] = useState(false);
 
   const networkRef = useRef(null);
@@ -246,16 +245,6 @@ function ChordNetwork({ isOpen, sourceChord, position, onSelectChord, onClose, o
             >
               🎵 Help me end this
             </button>
-
-            <div className="network-search">
-              <input
-                type="text"
-                placeholder="Search any chord..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="network-search-input"
-              />
-            </div>
           </div>
 
           {/* Ending suggestions */}

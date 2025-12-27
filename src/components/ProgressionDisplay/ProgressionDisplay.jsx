@@ -8,14 +8,6 @@ function ProgressionDisplay({ onPlayChord }) {
   const { state, actions } = useApp();
   const { progression, activeChordIndex, settings } = state;
 
-  const handleHover = useCallback((index, position) => {
-    actions.openNetwork(index, position);
-  }, [actions]);
-
-  const handleLeave = useCallback(() => {
-    // Don't close immediately - let the network handle this
-  }, []);
-
   const handleDelete = useCallback((index) => {
     actions.removeChord(index);
   }, [actions]);
@@ -54,8 +46,6 @@ function ProgressionDisplay({ onPlayChord }) {
                 showFingerNumbers={settings.showFingerNumbers}
                 showIntervals={settings.showIntervals}
                 compactMode={settings.compactMode}
-                onHover={handleHover}
-                onLeave={handleLeave}
                 onPlay={onPlayChord}
                 onDelete={handleDelete}
               />

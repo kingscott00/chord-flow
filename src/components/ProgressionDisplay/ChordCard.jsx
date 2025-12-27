@@ -10,22 +10,10 @@ function ChordCard({
   showFingerNumbers,
   showIntervals,
   compactMode,
-  onHover,
-  onLeave,
   onPlay,
   onDelete
 }) {
   const cardRef = useRef(null);
-
-  const handleMouseEnter = useCallback((e) => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
-      onHover(index, {
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2
-      });
-    }
-  }, [index, onHover]);
 
   const handlePlayClick = useCallback((e) => {
     e.stopPropagation();
@@ -41,8 +29,6 @@ function ChordCard({
     <motion.div
       ref={cardRef}
       className={`chord-card ${isActive ? 'active' : ''} ${compactMode ? 'compact' : ''}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={onLeave}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}

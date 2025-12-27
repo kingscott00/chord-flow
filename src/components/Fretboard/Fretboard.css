@@ -41,6 +41,15 @@
   border-radius: 10px;
 }
 
+.assigned-chord-badge {
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--accent-primary);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
 .scale-notes {
   font-size: 13px;
   color: var(--text-secondary);

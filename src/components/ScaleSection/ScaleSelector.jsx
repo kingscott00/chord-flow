@@ -62,43 +62,45 @@ function ScaleSelector({
       <div className="scale-filters">
         <span className="filter-label">Filters:</span>
 
-        <div className="filter-group">
-          <span className="filter-category">Difficulty:</span>
-          {DIFFICULTY_OPTIONS.map(diff => (
-            <button
-              key={diff}
-              className={`filter-btn ${filters.difficulty?.includes(diff) ? 'active' : ''}`}
-              onClick={() => toggleFilter('difficulty', diff)}
-            >
-              {diff.charAt(0).toUpperCase() + diff.slice(1)}
-            </button>
-          ))}
-        </div>
+        <div className="filter-groups-row">
+          <div className="filter-group">
+            <span className="filter-category">Difficulty:</span>
+            {DIFFICULTY_OPTIONS.map(diff => (
+              <button
+                key={diff}
+                className={`filter-btn ${filters.difficulty?.includes(diff) ? 'active' : ''}`}
+                onClick={() => toggleFilter('difficulty', diff)}
+              >
+                {diff.charAt(0).toUpperCase() + diff.slice(1)}
+              </button>
+            ))}
+          </div>
 
-        <div className="filter-group">
-          <span className="filter-category">Feel:</span>
-          {MOOD_FILTER_OPTIONS.map(mood => (
-            <button
-              key={mood}
-              className={`filter-btn ${filters.mood?.includes(mood) ? 'active' : ''}`}
-              onClick={() => toggleFilter('mood', mood)}
-            >
-              {mood.charAt(0).toUpperCase() + mood.slice(1)}
-            </button>
-          ))}
-        </div>
+          <div className="filter-group">
+            <span className="filter-category">Feel:</span>
+            {MOOD_FILTER_OPTIONS.map(mood => (
+              <button
+                key={mood}
+                className={`filter-btn ${filters.mood?.includes(mood) ? 'active' : ''}`}
+                onClick={() => toggleFilter('mood', mood)}
+              >
+                {mood.charAt(0).toUpperCase() + mood.slice(1)}
+              </button>
+            ))}
+          </div>
 
-        <div className="filter-group">
-          <span className="filter-category">Type:</span>
-          {TYPE_OPTIONS.map(type => (
-            <button
-              key={type}
-              className={`filter-btn ${filters.type?.includes(type) ? 'active' : ''}`}
-              onClick={() => toggleFilter('type', type)}
-            >
-              {type === 'full' ? 'Full Scale' : type.charAt(0).toUpperCase() + type.slice(1)}
-            </button>
-          ))}
+          <div className="filter-group">
+            <span className="filter-category">Type:</span>
+            {TYPE_OPTIONS.map(type => (
+              <button
+                key={type}
+                className={`filter-btn ${filters.type?.includes(type) ? 'active' : ''}`}
+                onClick={() => toggleFilter('type', type)}
+              >
+                {type === 'full' ? 'Full Scale' : type.charAt(0).toUpperCase() + type.slice(1)}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

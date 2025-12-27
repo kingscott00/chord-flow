@@ -70,15 +70,16 @@
 /* Controls */
 .network-controls {
   position: absolute;
-  bottom: -80px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   width: 100%;
   max-width: 500px;
+  pointer-events: auto;
 }
 
 /* Filter Bar */
@@ -138,30 +139,6 @@
   background: var(--bg-elevated);
   border-color: var(--accent-success);
   color: var(--accent-success);
-}
-
-.network-search {
-  flex: 1;
-  min-width: 180px;
-}
-
-.network-search-input {
-  width: 100%;
-  padding: 8px 14px;
-  font-size: 13px;
-  background: var(--bg-card);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  color: var(--text-primary);
-}
-
-.network-search-input:focus {
-  outline: none;
-  border-color: var(--accent-primary);
-}
-
-.network-search-input::placeholder {
-  color: var(--text-muted);
 }
 
 /* Ending Suggestions */

@@ -138,6 +138,8 @@ function ScaleSection({ onPlayScale }) {
                     onPlayScale={onPlayScale}
                     chords={progression}
                     detectedKey={detectedKey}
+                    perChordMode={perChordMode}
+                    assignedChord={perChordMode && selectedChordForScale !== null ? progression[selectedChordForScale] : null}
                   />
                 ))}
               </AnimatePresence>
